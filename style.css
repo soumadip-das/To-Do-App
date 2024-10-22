@@ -1,0 +1,163 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --container-bg: rgba(255, 255, 255, 0.8);
+    --task-bg: #f9f9f9;
+    --task-border: #ddd;
+    --button-color: #0078D7;
+}
+
+body.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --container-bg: rgba(48, 48, 48, 0.9);
+    --task-bg: #333;
+    --task-border: #555;
+    --button-color: #0078D7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('bgimg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    background-color: var(--container-bg);
+    width: 60%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: var(--button-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#div-l {
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#div-l div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--task-bg);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--task-border);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#div-l div span {
+    flex: 1;
+}
+
+#div-r {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--task-border);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: darken(var(--button-color), 10%);
+}
+
+#tck {
+    background-color: #28a745;
+}
+
+#tck:hover {
+    background-color: #218838;
+}
+
+#crs {
+    background-color: #dc3545;
+}
+
+#crs:hover {
+    background-color: #c82333;
+}
+
+#edit {
+    background-color: #ffc107;
+}
+
+#edit:hover {
+    background-color: #e0a800;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    color: var(--text-color); /* Use default text color */
+    font-size: 24px; /* Adjust font size if necessary */
+}
+
+#theme-toggle:hover {
+    background: none; /* No background change on hover */
+    color: var(--text-color); /* Keep the same text color */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}
